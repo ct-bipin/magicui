@@ -6,17 +6,17 @@
   "packageManager": "pnpm@9.15.0",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "dev": "turbo run dev --parallel",
-    "build": "turbo run build",
-    "start": "turbo run start",
+    "dev": "node init && turbo run dev --parallel",
+    "build": "node init && turbo run build",
+    "start": "node init && turbo run start",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "typecheck": "turbo run typecheck",
     "format:fix": "turbo run format:fix",
     "format:fix:silent": "turbo run format:fix -- --log-level silent",
     "format:check": "turbo run format:check",
-    "build:docs": "turbo run build:docs --filter=www",
-    "build:registry": "pnpm --filter=www build:registry && pnpm --filter=www lint:fix && pnpm format:fix:silent",
+    "build:docs": "node init && turbo run build:docs --filter=www",
+    "build:registry": "node init && pnpm --filter=www build:registry && pnpm --filter=www lint:fix && pnpm format:fix:silent",
     "check": "pnpm lint && pnpm typecheck && pnpm format:check"
   },
   "devDependencies": {
